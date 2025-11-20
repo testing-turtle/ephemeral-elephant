@@ -2,7 +2,10 @@ name: basic - workflow
 
 on:
   workflow_dispatch:
-
+    inputs:
+      workflow_identifier:
+        description: 'Identifier for this workflow run'
+        required: true
 
 jobs:
   build1:
