@@ -1,0 +1,20 @@
+name: basic - workflow
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  build1:
+    runs-on: [self-hosted, ManagedDevOps.Pool=tt-pool3]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Do Build
+        run: |
+          echo "Fake build step"
+          sleep 20
+          echo "Build step complete"
+
+
