@@ -9,7 +9,7 @@ on:
 
 jobs:
   build1:
-    runs-on: [self-hosted, ManagedDevOps.Pool=tt-pool3]
+    runs-on: [self-hosted, ManagedDevOps.Pool=tt-pool3, "JobId=build1-${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"]
 
     steps:
       - uses: actions/checkout@v4
