@@ -6,6 +6,10 @@ on:
       workflow_identifier:
         description: 'Identifier for this workflow run'
         required: true
+      sleep_duration:
+        description: 'Duration to sleep in seconds'
+        required: false
+        default: '20'
 
 jobs:
   build1:
@@ -17,7 +21,7 @@ jobs:
       - name: Do Build
         run: |
           echo "Fake build step"
-          sleep 20
+          sleep ${{ github.event.inputs.sleep_duration }}
           echo "Build step complete"
 
 
