@@ -17,7 +17,7 @@ on:
 
 jobs:
   build1:
-    runs-on: [self-hosted, ManagedDevOps.Pool=tt-pool3, "JobId=build1-${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"]
+    runs-on: [self-hosted, ManagedDevOps.Pool=tt-pool4, "JobId=build1-${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"]
 
     steps:
       - uses: actions/checkout@v4
@@ -29,7 +29,7 @@ jobs:
           echo "Build step complete"
 
   build2:
-    runs-on: [self-hosted, ManagedDevOps.Pool=tt-pool3, "JobId=build2-${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"]
+    runs-on: [self-hosted, ManagedDevOps.Pool=tt-pool4, "JobId=build2-${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"]
     needs: build1
 
     steps:
@@ -42,7 +42,7 @@ jobs:
           echo "Build step complete"
 
   build3:
-    runs-on: [self-hosted, ManagedDevOps.Pool=tt-pool3, "JobId=build3-${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"]
+    runs-on: [self-hosted, ManagedDevOps.Pool=tt-pool4, "JobId=build3-${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"]
     needs: build2
     steps:
       - uses: actions/checkout@v4
