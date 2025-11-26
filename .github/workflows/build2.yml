@@ -1,8 +1,12 @@
 name: build2
+run-name: build2-${{ github..event.inputs.batch_identifier }}-${{ github.event.inputs.workflow_identifier }}
 
 on:
   workflow_dispatch:
     inputs:
+      batch_identifier:
+        description: 'Identifier for this workflow run'
+        required: true
       workflow_identifier:
         description: 'Identifier for this workflow run'
         required: true
