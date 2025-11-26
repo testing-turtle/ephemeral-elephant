@@ -1,4 +1,4 @@
-name: basic - workflow
+name: build1
 
 on:
   workflow_dispatch:

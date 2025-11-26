@@ -1,0 +1,50 @@
+name: build2
+
+on:
+  workflow_dispatch:
+    inputs:
+      workflow_identifier:
+        description: 'Identifier for this workflow run'
+        required: true
+      sleep_duration:
+        description: 'Duration to sleep in seconds'
+        required: false
+        default: '20'
+
+jobs:
+  build1:
+    runs-on: [self-hosted, ManagedDevOps.Pool=tt-pool3, "JobId=build1-${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Do Build
+        run: |
+          echo "Fake build step"
+          sleep ${{ github.event.inputs.sleep_duration }}
+          echo "Build step complete"
+
+  build2:
+    runs-on: [self-hosted, ManagedDevOps.Pool=tt-pool3, "JobId=build2-${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"]
+    needs: build1
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Do Build
+        run: |
+          echo "Fake build step"
+          sleep ${{ github.event.inputs.sleep_duration }}
+          echo "Build step complete"
+
+  build3:
+    runs-on: [self-hosted, ManagedDevOps.Pool=tt-pool3, "JobId=build3-${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"]
+    needs: build2
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Do Build
+        run: |
+          echo "Fake build step"
+          sleep ${{ github.event.inputs.sleep_duration }}
+          echo "Build step complete"
