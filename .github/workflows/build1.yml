@@ -1,5 +1,5 @@
 name: build1
-run-name: build1-${{ github.event.inputs.batch_identifier }}-${{ github.event.inputs.workflow_identifier }}
+run-name: build1-${{ inputs.batch_identifier }}-${{ inputs.workflow_identifier }}
 
 on:
   workflow_dispatch:

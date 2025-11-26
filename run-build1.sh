@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-num_workflows=20
+num_workflows=1
+# num_workflows=20
 # sleep_duration=120 # 2 minutes
 sleep_duration=300 # 5 minutes
 workflow_name="build1.yml"
