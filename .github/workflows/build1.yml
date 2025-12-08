@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       batch_identifier:
-        description: 'Identifier for this workflow run'
+        description: 'Identifier for this batch'
         required: true
       workflow_identifier:
         description: 'Identifier for this workflow run'
